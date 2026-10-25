@@ -12,7 +12,7 @@
 }
 *{box-sizing:border-box}
 html{direction:rtl}
-body{margin:0;padding:12px;background:#f1f5f9;color:var(--text);font-family:Tahoma,Arial,sans-serif}
+body{margin:0;padding:8px;background:#f1f5f9;color:var(--text);font-family:Tahoma,Arial,sans-serif}
 button,input,select,textarea{font:inherit}
 .toolbar{max-width:210mm;margin:0 auto 12px;background:#fff;padding:12px;border-radius:12px;box-shadow:0 3px 12px #0000000d;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
 .toolbar-actions{display:flex;flex-wrap:wrap;gap:7px}
@@ -28,7 +28,7 @@ button,input,select,textarea{font:inherit}
 .saved-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:7px 0;border-bottom:1px solid #e2e8f0}
 .saved-row:last-child{border-bottom:0}
 .saved-row strong{flex:1;min-width:150px}
-.page{width:min(210mm,100%);min-height:297mm;margin:0 auto;background:white;padding:5mm 7mm;box-shadow:0 2px 16px #00000012;border-radius:5px;overflow:hidden}
+.page{width:min(210mm,100%);min-height:0;margin:0 auto;background:white;padding:4mm 5mm;box-shadow:0 2px 16px #00000012;border-radius:5px;overflow:visible}
 .header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 8px;margin-bottom:4px;border:1px solid #bae6fd;border-radius:7px;background:linear-gradient(135deg,#e0f2fe,#dcfce7)}
 .school-info{font-size:8pt;font-weight:bold;line-height:1.5;min-width:29%}
 .school-info.left{text-align:left}
@@ -92,34 +92,36 @@ input.control,select.control,textarea.control,.notes textarea,.objective textare
  .notes{grid-template-columns:1fr}
  .notes textarea,.objective textarea{font-size:13px}
 }
-@page{size:A4 portrait;margin:0}
+@page{size:A4 portrait;margin:4mm}
 @media print{
- html,body{margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ html,body{width:auto!important;height:auto!important;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
  .toolbar,.saved-panel,.small-help{display:none!important}
- .page{width:210mm;height:297mm;min-height:0;margin:0;padding:4mm 6mm;box-shadow:none;border-radius:0;overflow:hidden}
- .header{padding:3px 6px;margin-bottom:2px}
- .header-title h1{font-size:13pt}
- .header-title p{font-size:7pt}
- .school-info{font-size:7pt}
+ .page{width:202mm!important;height:auto!important;min-height:0!important;margin:0!important;padding:0!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}
+ .header{padding:2px 4px;margin-bottom:2px;gap:5px}
+ .header-title h1{font-size:12pt;margin-bottom:1px}
+ .header-title p{font-size:6.8pt}
+ .school-info{font-size:6.5pt;line-height:1.35}
  .meta{margin-bottom:2px}
- .meta th,.meta td{font-size:7pt;padding:2px 3px}
+ .meta th,.meta td{font-size:6.7pt;padding:1.5px 2px;line-height:1.15}
  input,select,textarea{color:#111!important;background:transparent!important;box-shadow:none!important}
  input.control,select.control,.sig-select,.objective textarea,.note textarea,.remarks{border:0!important;border-radius:0!important;padding:0!important;appearance:none;-webkit-appearance:none}
- .objective{padding:2px 5px;margin-bottom:2px}
- .objective label,.note label{font-size:7pt}
- .objective textarea{height:24px;resize:none}
+ .objective{padding:2px 4px;margin-bottom:2px}
+ .objective label,.note label{font-size:6.7pt;margin-bottom:1px}
+ .objective textarea{height:20px;resize:none;font-size:7pt}
  .eval{margin-bottom:2px}
- .eval th{font-size:6.7pt;padding:2px 1px}
- .eval td{font-size:6.7pt;height:18px;padding:1px 2px}
- .rate{height:17px;font-size:8pt}
+ .eval th{font-size:6.2pt;padding:1.5px 1px;line-height:1.1}
+ .eval td{font-size:6.2pt;height:16px;padding:1px;line-height:1.1}
+ .rate{height:14px;font-size:7.5pt;padding:0}
  .notes{gap:3px;margin-bottom:2px}
- .note{padding:2px 4px}
- .note textarea{height:31px;font-size:7pt;resize:none}
- .signatures td{padding:3px}
- .sig-title{font-size:7pt}
- .sig-name{font-size:8pt}
- .sig-space{font-size:6.5pt;margin-top:3px}
- .footer{font-size:6.5pt;margin-top:3px;padding-top:2px}
+ .note{padding:2px 3px}
+ .note textarea{height:25px;font-size:6.5pt;resize:none}
+ .signatures{margin-top:2px}
+ .signatures td{padding:2px}
+ .sig-title{font-size:6.5pt;margin-bottom:2px}
+ .sig-select{font-size:6.5pt}
+ .sig-name{font-size:7.5pt;padding:2px}
+ .sig-space{font-size:6pt;margin-top:2px;padding-top:2px}
+ .footer{font-size:6pt;margin-top:2px;padding-top:2px}
  tr,td,th,.header,.objective,.notes,.signatures{break-inside:avoid;page-break-inside:avoid}
 }
 </style>
